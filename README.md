@@ -7,7 +7,15 @@ Análisis y diseño de algoritmos
 - Santiago Anibal Carrillo Torres -202259465
 - Edwar Yamir Forero Blanco - 202259664
 ```
+# Estructura del proyecto:
+/proyecto
+  ├── /carpeta1
+  │   ├── archivo1
+  │   └── archivo2
+  ├── /carpeta2
+  │   ├── archivo3
+  │   └── archivo4
+  └── README.md
+
 # Como ejecutar los programas:
-Este repositorio contiene 3 carpetas (Module), cada una representa un punto del taller.
-- Punto 1: Analisis algoritmo Divide y venceras:
-En la carpeta StoogeSort se debe dirigir a src/main/java/.
+
