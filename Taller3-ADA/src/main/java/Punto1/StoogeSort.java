@@ -1,11 +1,16 @@
+/**
+@Author: Edwardo Calderon, Santiago Carrillo, Edwar Forero
+@version: 1.0
+ */
 package Punto1;
 
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Clase StoogeSort para ordenamiento de datos
+ */
 public class StoogeSort {
-
-
     /**
      * Metodo StoogeSort para ordanamiento de datos
      * @param matriz corresponde al arreglo que será ordenado
@@ -33,6 +38,10 @@ public class StoogeSort {
             stoogesort(matriz, i, j-t);
         }
     }
+    /**
+     * Metodo main para probar el ordenamiento
+     * @param args imprime el tiempo de ejecución en milisegundos y la matriz ordenada
+     */
     public static void main(String args[]) {
         StoogeSort stg = new StoogeSort();
         Random rand = new Random();

@@ -1,0 +1,11 @@
+-classpath 'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\build\\classes\\java\\main;C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\build\\resources\\main'
+-d 'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\build\\docs\\javadoc'
+-doctitle 'Taller3-ADA 1.0-SNAPSHOT API'
+-notimestamp 
+-quiet 
+-windowtitle 'Taller3-ADA 1.0-SNAPSHOT API'
+'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\src\\main\\java\\Punto1\\StoogeSort.java'
+'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\src\\main\\java\\Punto2\\Moda.java'
+'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\src\\main\\java\\Punto3\\InsertionSort.java'
+'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\src\\main\\java\\Punto3\\MergeSort.java'
+'C:\\Users\\Edwar\\OneDrive\\Documentos\\UNIVALLE_4to_Semestre\\ANÁLISIS Y DISEÑO DE ALGORITMOS I\\Talleres\\Taller_3_S\\Taller_3\\Taller3-ADA\\src\\main\\java\\Punto3\\QuickSort.java'
