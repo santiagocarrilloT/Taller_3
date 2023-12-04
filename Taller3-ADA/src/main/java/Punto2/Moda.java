@@ -1,3 +1,6 @@
+/**
+ * @autor Edwar Forero, Santiago Carrillo, Edwardo Calderon
+ */
 package Punto2;
 
 import java.util.ArrayList;
@@ -5,10 +8,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-
+/**
+ * Clase Moda para encontrar la moda de un vector
+ */
 public class Moda {
 
-    // Implementación de QuickSort en Java
+    /**
+     * Método para ordenar un array utilizando QuickSort
+     * @param arr array a ordenar
+     * @return array ordenado
+     */
     public int[] quicksort(int[] arr) {
         if (arr.length <= 1) {
             return arr;
@@ -37,7 +46,11 @@ public class Moda {
         }
     }
 
-    // Encontrar la moda de un vector en Java
+    /**
+     * Método para encontrar la moda de un vector
+     * @param arr vector a analizar
+     * @return moda/s del vector y su/s frecuencia/s
+     */
     public String encontrarModa(int[] arr) {
         // Ordenar el vector utilizando QuickSort
         int[] arrSorted = quicksort(arr);
@@ -66,7 +79,13 @@ public class Moda {
         return "Moda(s) "+ moda + ", Frecuencia: " + maxFrecuencia;
     }
 
-    // Función para concatenar tres arreglos en uno solo
+    /**
+     * Método para concatenar 3 arrays
+     * @param arr1 primer array
+     * @param arr2 segundo array
+     * @param arr3 tercer array
+     * @return array concatenado
+     */
     public static int[] concatenateArrays(int[] arr1, int[] arr2, int[] arr3) {
         int[] result = new int[arr1.length + arr2.length + arr3.length];
         System.arraycopy(arr1, 0, result, 0, arr1.length);
@@ -75,6 +94,10 @@ public class Moda {
         return result;
     }
 
+    /**
+     * Método main para probar la clase Moda
+     * @param args Imprime el tiempo de ejecución en milisegundos, el vector y la moda del vector
+     */
     public static void main(String[] args) {
         Moda moda = new Moda();
         Random rand = new Random();
