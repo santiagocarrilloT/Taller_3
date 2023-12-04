@@ -1,15 +1,15 @@
 package Punto2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 
 public class Moda {
 
-
     // Implementación de QuickSort en Java
-    public static int[] quicksort(int[] arr) {
+    public int[] quicksort(int[] arr) {
         if (arr.length <= 1) {
             return arr;
         } else {
@@ -28,15 +28,17 @@ public class Moda {
                 }
             }
 
-            int[] sortedLeft = quicksort(listToArray(left));
-            int[] sortedRight = quicksort(listToArray(right));
+            int[] sortedLeft = quicksort(left.stream().mapToInt(Integer::intValue).toArray());
+            int[] sortedRight = quicksort(right.stream().mapToInt(Integer::intValue).toArray());
 
-            return concatenateArrays(sortedLeft, listToArray(middle), sortedRight);
+            int[] sortedMiddle = middle.stream().mapToInt(Integer::intValue).toArray();
+
+            return concatenateArrays(sortedLeft, sortedMiddle, sortedRight);
         }
     }
 
     // Encontrar la moda de un vector en Java
-    public static String encontrarModa(int[] arr) {
+    public String encontrarModa(int[] arr) {
         // Ordenar el vector utilizando QuickSort
         int[] arrSorted = quicksort(arr);
 
@@ -61,29 +63,7 @@ public class Moda {
                 moda.add(arrSorted[i]);
             }
         }
-
-        return modaToString(moda) + " con frecuencia " + maxFrecuencia;
-    }
-
-    // Función para generar un arreglo aleatorio de tamaño n
-    public static int[] generarArreglo(int n) {
-        Random random = new Random();
-        int[] arr = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            arr[i] = random.nextInt(101); // Números aleatorios entre 0 y 100
-        }
-
-        return arr;
-    }
-
-    // Función para convertir una lista de enteros a un arreglo
-    public static int[] listToArray(List<Integer> list) {
-        int[] arr = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            arr[i] = list.get(i);
-        }
-        return arr;
+        return "Moda(s) "+ moda + ", Frecuencia: " + maxFrecuencia;
     }
 
     // Función para concatenar tres arreglos en uno solo
@@ -95,52 +75,24 @@ public class Moda {
         return result;
     }
 
-    // Función para convertir una lista de enteros a una cadena
-    public static String modaToString(List<Integer> moda) {
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < moda.size(); i++) {
-            sb.append(moda.get(i));
-            if (i < moda.size() - 1) {
-                sb.append(", ");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-
-    // Función para convertir un arreglo de enteros a una cadena
-    public static String arrayToString(int[] arr) {
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < arr.length; i++) {
-            sb.append(arr[i]);
-            if (i < arr.length - 1) {
-                sb.append(", ");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-
-    // Generar un vector aleatorio de tamaño n y encontrar su moda
-    public static void generarYEncontrarModa() {
-        for (int n : new int[]{10, 100, 1000, 2000}) {
-            int[] arr = generarArreglo(n);
-            System.out.println("Vector de tamaño " + n + " --> " + arrayToString(arr));
-            System.out.println("La moda es: " + encontrarModa(arr));
-        }
-    }
-
     public static void main(String[] args) {
-        // Ejemplos de uso
-        int[] vector1 = {1, 2, 2, 3, 4};
-        int[] vector2 = {1, 2, 2, 3, 3, 5};
+        Moda moda = new Moda();
+        Random rand = new Random();
 
-        System.out.println("Vector de tamaño " + vector1.length + " --> " + arrayToString(vector1));
-        System.out.println("La moda es: " + encontrarModa(vector1));
+        int arrPru[];
 
-        System.out.println("Vector de tamaño " + vector2.length + " --> " + arrayToString(vector2));
-        System.out.println("La moda es: " + encontrarModa(vector2));
-
-        generarYEncontrarModa();
+        for (int valor = 10; valor <= 10000; valor *= 10) {
+            arrPru = new int[valor];
+            for (int i = 0; i < arrPru.length; i++) {
+                arrPru[i] = rand.nextInt(valor);
+            }
+            long startTime = System.currentTimeMillis();
+            System.out.println(moda.encontrarModa(arrPru));
+            long endTime = System.currentTimeMillis();
+            long tiempoEjecucion = endTime - startTime;
+            System.out.println("->Tamaño matriz: "+ valor+"<-");
+            System.out.println(Arrays.toString(arrPru));
+            System.out.println("Tiempo de ejecución en milisegundos: " + tiempoEjecucion + "\n");
+        }
     }
 }
