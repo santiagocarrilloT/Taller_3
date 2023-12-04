@@ -87,6 +87,5 @@ public class InsertionSort {
         for (int tamano : tamanosEntrada) {
             is.ordenarYMostrarArray(tamano, numEjecuciones);
         }
-
     }
 }

@@ -3,6 +3,8 @@
  */
 package Punto2;
 
+import Punto3.MergeSort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -95,28 +97,63 @@ public class Moda {
     }
 
     /**
+     * Método para ordenar un array, imprimirlo y mostrar el tiempo de ejecución
+     *
+     * @param tamano tamaño del array
+     * @param numEjecuciones número de ejecuciones
+     */
+    public void ordenarYMostrarArray(int tamano, int numEjecuciones) {
+        Random rand = new Random();
+
+        while (numEjecuciones > 0) {
+            System.out.println("\n"+"Ejecución Numero: " + (3 - numEjecuciones));
+            numEjecuciones--;
+
+            // Crear un array aleatorio de tamaño
+            int[] array = new int[tamano];
+            for (int i = 0; i < tamano; i++) {
+                array[i] = rand.nextInt(1000); // Valores aleatorios entre 0 y 999
+            }
+
+            // Imprimir array desordenado (opcional)
+            // System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+
+            // Medir el tiempo de ejecución
+            long startTime = System.nanoTime();
+
+            // Ejecutar Moda
+            encontrarModa(array);
+
+            // Medir el tiempo transcurrido
+            long endTime = System.nanoTime();
+            long elapsedTime = endTime - startTime;
+
+            // Imprimir array ordenado
+            System.out.println("Array tamaño " + tamano + " ordenado ");
+
+            // Imprimir el tiempo transcurrido en segundos
+            double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
+
+            // Imprime el tiempo de ejecución en segundos sin notación científica
+            System.out.printf("Tiempo de ejecución: %.9f segundos", elapsedTimeInSeconds);
+            System.out.println("\n");
+        }
+    }
+
+
+    /**
      * Método main para probar la clase Moda
      * @param args Imprime el tiempo de ejecución en milisegundos, el vector y la moda del vector
      */
     public static void main(String[] args) {
-        Moda moda = new Moda();
-        Random rand = new Random();
+        Moda md = new Moda();
 
-        int arrPru[];
+        // Tamaños de entrada
+        int[] tamanosEntrada = {10, 100, 1000, 10000};
 
-        for (int valor = 10; valor <= 10000; valor *= 10) {
-            arrPru = new int[valor];
-            for (int i = 0; i < arrPru.length; i++) {
-                arrPru[i] = rand.nextInt(valor);
-            }
-            System.out.println("->Tamaño matriz: "+ valor+"<-");
-            System.out.println(Arrays.toString(arrPru));
-            long startTime = System.currentTimeMillis();
-            System.out.println(moda.encontrarModa(arrPru));
-            long endTime = System.currentTimeMillis();
-            long tiempoEjecucion = endTime - startTime;
-
-            System.out.println("Tiempo de ejecución en milisegundos: " + tiempoEjecucion + "\n");
+        // Ejecutar el algoritmo para cada tamaño de entrada
+        for (int tamano : tamanosEntrada) {
+            md.ordenarYMostrarArray(tamano, 2);
         }
     }
 }
