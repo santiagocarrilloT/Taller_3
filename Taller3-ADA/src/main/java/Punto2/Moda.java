@@ -116,20 +116,20 @@ public class Moda {
             }
 
             // Imprimir array desordenado (opcional)
-            // System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+            //System.out.println("Array desordenado de tamaño " + tamano + ": \n" + Arrays.toString(array));
+
+            // Imprimir array ordenado
+            System.out.println("Array tamaño " + tamano + " ordenado:\n" + Arrays.toString(quicksort(array)));
 
             // Medir el tiempo de ejecución
             long startTime = System.nanoTime();
 
             // Ejecutar Moda
-            encontrarModa(array);
+            System.out.println(encontrarModa(array));
 
             // Medir el tiempo transcurrido
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
-
-            // Imprimir array ordenado
-            System.out.println("Array tamaño " + tamano + " ordenado ");
 
             // Imprimir el tiempo transcurrido en segundos
             double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;

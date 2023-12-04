@@ -53,14 +53,14 @@ public class StoogeSort {
             for (int i = 0; i < arrPru.length; i++) {
                 arrPru[i] = rand.nextInt(valor);
             }
+            System.out.println("->Tamaño matriz: "+ valor+"<-");
+            //System.out.println("Matriz No Ordenada:\n " + Arrays.toString(arrPru));
             long startTime = System.currentTimeMillis();
             stg.stoogesort(arrPru, 0, arrPru.length-1);
-
             long endTime = System.currentTimeMillis();
             long tiempoEjecucion = endTime - startTime;
-            System.out.println("->Tamaño matriz: "+ valor+"<-");
-            System.out.println(Arrays.toString(arrPru));
-            System.out.println("Tiempo de ejecución en milisegundos: " + tiempoEjecucion);
+            System.out.println("Matriz Ordenada:\n " + Arrays.toString(arrPru));
+            System.out.println("Tiempo de ejecución en milisegundos: " + tiempoEjecucion + "\n");
         }
     }
 }

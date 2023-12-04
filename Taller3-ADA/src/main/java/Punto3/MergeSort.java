@@ -100,7 +100,7 @@ public class MergeSort {
             }
 
             // Imprimir array desordenado (opcional)
-            // System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+            //System.out.println("Array desordenado de tamaño " + tamano + ":\n " + Arrays.toString(array));
 
             // Medir el tiempo de ejecución
             long startTime = System.nanoTime();
@@ -113,7 +113,7 @@ public class MergeSort {
             long elapsedTime = endTime - startTime;
 
             // Imprimir array ordenado
-            System.out.println("Array tamaño " + tamano + " ordenado " + "\n" );
+            System.out.println("Array tamaño " + tamano + " ordenado " + "\n" + Arrays.toString(array));
 
             // Imprimir el tiempo transcurrido en segundos
             double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
