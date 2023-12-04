@@ -5,4 +5,4 @@ en consola  el numero de ejecucion (realiza 2 por tamaño de arreglo), el tamañ
 y por ultimo el tiempo de
 ejecucion.
 
-- Nota: Si desea ver la matriz desordenada solo debe descomentar la linea 119 de la clase Moda.java
+- Nota: Si desea ver la matriz desordenada solo debe descomentar la linea 116 de la clase Moda.java
