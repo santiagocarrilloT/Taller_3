@@ -76,26 +76,65 @@ public class MergeSort {
     }
 
     // A utility function to print array of size n
-    static void printArray(int[] arr)
+    /*static void printArray(int[] arr)
     {
         int n = arr.length;
         for (int j : arr) System.out.print(j + " ");
         System.out.println();
-    }
+    }*/
 
     // Driver code
     public static void main(String[] args)
     {
-        long startTime;
+        /*long startTime;
         long endTime;
-        long tiempo;
+        long tiempo;*/
 
         Random rand = new Random();
         MergeSort mergeSort = new MergeSort();
-        int [] arrPru;
+        //int [] arrPru;
+        // Tamaños de entrada
+        int[] tamanosEntrada = {10, 50, 100, 500, 1000, 2000, 5000, 10000};
+        int numEjecuciones = 3;
 
-        //Pruebas desde tamaño 10 hasta 10000
-        for (int i = 10; i <= 10000;i *= 10) {
+        while (numEjecuciones > 0) {
+            System.out.println("Ejecución Numero: " + (4 - numEjecuciones) + "\n");
+            numEjecuciones--;
+            for (int tamano : tamanosEntrada) {
+                // Crear un array aleatorio de tamaño
+                int[] array = new int[tamano];
+                for (int i = 0; i < tamano; i++) {
+                    array[i] = rand.nextInt(1000); // Valores aleatorios entre 0 y 999
+                }
+
+                // Imprimir array desordenado
+                //System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+
+                // Medir el tiempo de ejecución
+                long startTime = System.nanoTime();
+
+                // Ejecutar InsertionSort
+                mergeSort.sort(array, 0, array.length - 1);
+
+                // Medir el tiempo transcurrido
+                long endTime = System.nanoTime();
+                long elapsedTime = endTime - startTime;
+
+                // Imprimir array ordenado
+                System.out.println("Array tamaño " + tamano + " ordenado " + "\n" + Arrays.toString(array));
+
+                // Imprimir el tiempo transcurrido en segundos
+                double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
+
+                // Imprime el tiempo de ejecución en segundos sin notación científica
+                System.out.printf("Tiempo de ejecución: %.9f segundos", elapsedTimeInSeconds);
+                System.out.println("\n");
+
+            }
+
+
+            //Pruebas desde tamaño 10 hasta 10000
+        /*for (int i = 10; i <= 10000;i *= 10) {
             arrPru = new int[i];
             for (int j = 0; j < arrPru.length; j++) {
                 arrPru[j] = rand.nextInt(i);
@@ -135,6 +174,8 @@ public class MergeSort {
         tiempo = endTime - startTime;
         System.out.print("Matriz post insertion: "+arrPru.length+" ");
         System.out.println(Arrays.toString(arrPru));
-        System.out.println("El tiempo de ejecución es: " + tiempo + " milisegundos");
+        System.out.println("El tiempo de ejecución es: " + tiempo + " milisegundos");*/
+
+        }
     }
 }

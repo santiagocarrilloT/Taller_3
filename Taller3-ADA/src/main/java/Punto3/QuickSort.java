@@ -60,7 +60,7 @@ public class QuickSort {
                 }
 
                 // Imprimir array desordenado
-                System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+                //System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
 
                 // Medir el tiempo de ejecución
                 long startTime = System.nanoTime();
@@ -73,10 +73,15 @@ public class QuickSort {
                 long elapsedTime = endTime - startTime;
 
                 // Imprimir array ordenado
-                System.out.println("Array ordenado: " + Arrays.toString(array));
+                System.out.println("Array tamaño "+ tamano + " ordenado " +"\n"+ Arrays.toString(array));
 
                 // Imprimir el tiempo transcurrido en segundos
-                System.out.println("Tiempo transcurrido: " + (double) elapsedTime + " milisegundos\n");
+                double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
+
+                // Imprime el tiempo de ejecución en segundos sin notación científica
+                System.out.printf("Tiempo de ejecución: %.9f segundos", elapsedTimeInSeconds);
+                System.out.println("\n");
+
             }
 
         }
