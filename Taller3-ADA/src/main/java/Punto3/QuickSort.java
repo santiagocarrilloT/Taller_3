@@ -4,8 +4,12 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class QuickSort {
-
-
+    /**
+     * Metodo quicksort para ordenar un array de enteros
+     * @param A array de enteros
+     * @param izq indice izquierdo
+     * @param der indice derecho
+     */
     public void quicksort(int A[], int izq, int der) {
 
         int pivote=A[izq]; // tomamos primer elemento como pivote
@@ -32,58 +36,50 @@ public class QuickSort {
             quicksort(A,j+1,der);          // ordenamos subarray derecho
 
     }
+    /**
+     * Metodo main para ejecutar el programa
+     *
+     */
 
     public static void main(String[] args) {
-        long startTime;
-        long endTime;
-        long tiempo;
-
+        QuickSort qs = new QuickSort();
         Random rand = new Random();
-        QuickSort quickSort = new QuickSort();
 
-        int [] arrPru;
+        // Tamaños de entrada
+        int[] tamanosEntrada = {10, 50, 100, 500, 1000, 2000, 5000, 10000};
+        int numEjecuciones = 3;
+        // Ejecutar el algoritmo para cada tamaño de entrada
+        while (numEjecuciones > 0) {
+            System.out.println("Ejecución Numero: " + (4 - numEjecuciones) + "\n");
+            numEjecuciones--;
+            for (int tamano : tamanosEntrada) {
+                // Crear un array aleatorio de tamaño
+                int[] array = new int[tamano];
+                for (int i = 0; i < tamano; i++) {
+                    array[i] = rand.nextInt(1000); // Valores aleatorios entre 0 y 999
+                }
 
-        //Pruebas desde tamaño 10 hasta 10000
-        for (int i = 10; i <= 10000;i *= 10) {
-            arrPru = new int[i];
-            for (int j = 0; j < arrPru.length; j++) {
-                arrPru[j] = rand.nextInt(i);
+                // Imprimir array desordenado
+                System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
+
+                // Medir el tiempo de ejecución
+                long startTime = System.nanoTime();
+
+                // Ejecutar Quicksort
+                qs.quicksort(array, 0, array.length - 1);
+
+                // Medir el tiempo transcurrido
+                long endTime = System.nanoTime();
+                long elapsedTime = endTime - startTime;
+
+                // Imprimir array ordenado
+                System.out.println("Array ordenado: " + Arrays.toString(array));
+
+                // Imprimir el tiempo transcurrido en segundos
+                System.out.println("Tiempo transcurrido: " + (double) elapsedTime + " milisegundos\n");
             }
-            startTime = System.currentTimeMillis();
-            quickSort.quicksort(arrPru,0,arrPru.length-1);
-            endTime = System.currentTimeMillis();
-            tiempo = endTime - startTime;
-            System.out.print("Matriz post insertion: "+arrPru.length+" ");
-            System.out.println(Arrays.toString(arrPru));
-            System.out.println("El tiempo de ejecución es: " + tiempo + " milisegundos");
+
         }
 
-        //Pruebas desde tamaño 50 hasta 5000
-        for (int i = 50; i <= 5000;i *= 10) {
-            arrPru = new int[i];
-            for (int j = 0; j < arrPru.length; j++) {
-                arrPru[j] = rand.nextInt(i);
-            }
-            startTime = System.currentTimeMillis();
-            quickSort.quicksort(arrPru,0,arrPru.length-1);
-            endTime = System.currentTimeMillis();
-            tiempo = endTime - startTime;
-            System.out.print("Matriz post insertion: "+arrPru.length+" ");
-            System.out.println(Arrays.toString(arrPru));
-            System.out.println("El tiempo de ejecución es: " + tiempo + " milisegundos");
-        }
-
-        //Pruebas de tamaño 2000
-        arrPru = new int[2000];
-        for (int j = 0; j < arrPru.length; j++) {
-            arrPru[j] = rand.nextInt(2000);
-        }
-        startTime = System.currentTimeMillis();
-        quickSort.quicksort(arrPru,0,arrPru.length-1);
-        endTime = System.currentTimeMillis();
-        tiempo = endTime - startTime;
-        System.out.print("Matriz post insertion: "+arrPru.length+" ");
-        System.out.println(Arrays.toString(arrPru));
-        System.out.println("El tiempo de ejecución es: " + tiempo + " milisegundos");
     }
 }
