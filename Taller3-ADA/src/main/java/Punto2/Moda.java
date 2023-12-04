@@ -3,8 +3,6 @@
  */
 package Punto2;
 
-import Punto3.MergeSort;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +39,6 @@ public class Moda {
 
             int[] sortedLeft = quicksort(left.stream().mapToInt(Integer::intValue).toArray());
             int[] sortedRight = quicksort(right.stream().mapToInt(Integer::intValue).toArray());
-
             int[] sortedMiddle = middle.stream().mapToInt(Integer::intValue).toArray();
 
             return concatenateArrays(sortedLeft, sortedMiddle, sortedRight);
@@ -88,7 +85,7 @@ public class Moda {
      * @param arr3 tercer array
      * @return array concatenado
      */
-    public static int[] concatenateArrays(int[] arr1, int[] arr2, int[] arr3) {
+    public int[] concatenateArrays(int[] arr1, int[] arr2, int[] arr3) {
         int[] result = new int[arr1.length + arr2.length + arr3.length];
         System.arraycopy(arr1, 0, result, 0, arr1.length);
         System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
@@ -118,6 +115,7 @@ public class Moda {
             // Imprimir array desordenado (opcional)
             // System.out.println("Array desordenado de tamaño " + tamano + ": " + Arrays.toString(array));
 
+
             // Medir el tiempo de ejecución
             long startTime = System.nanoTime();
 
@@ -129,7 +127,7 @@ public class Moda {
             long elapsedTime = endTime - startTime;
 
             // Imprimir array ordenado
-            System.out.println("Array tamaño " + tamano + " ordenado ");
+            System.out.println("Array tamaño " + tamano + " ordenado: "+Arrays.toString(quicksort(array)));
 
             // Imprimir el tiempo transcurrido en segundos
             double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
