@@ -86,12 +86,13 @@ public class Moda {
             for (int i = 0; i < arrPru.length; i++) {
                 arrPru[i] = rand.nextInt(valor);
             }
+            System.out.println("->Tamaño matriz: "+ valor+"<-");
+            System.out.println(Arrays.toString(arrPru));
             long startTime = System.currentTimeMillis();
             System.out.println(moda.encontrarModa(arrPru));
             long endTime = System.currentTimeMillis();
             long tiempoEjecucion = endTime - startTime;
-            System.out.println("->Tamaño matriz: "+ valor+"<-");
-            System.out.println(Arrays.toString(arrPru));
+
             System.out.println("Tiempo de ejecución en milisegundos: " + tiempoEjecucion + "\n");
         }
     }
