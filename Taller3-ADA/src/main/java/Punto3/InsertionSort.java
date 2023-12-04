@@ -61,7 +61,7 @@ public class InsertionSort {
             long elapsedTime = endTime - startTime;
 
             // Imprimir array ordenado
-            System.out.println("Array tamaño " + tamano + " ordenado " + "\n" + Arrays.toString(array));
+            System.out.println("Array tamaño " + tamano + " ordenado " + "\n" );
 
             // Imprimir el tiempo transcurrido en segundos
             double elapsedTimeInSeconds = (double) elapsedTime / 1_000_000_000.0;
