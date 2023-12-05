@@ -3,7 +3,7 @@ Análisis y Diseño de Algoritmos
 ***
 ## Integrantes
 ```
-- Juan Edwardo Calderon Jaramillo - 202259671
+- Juan Eduardo Calderon Jaramillo - 202259671
 - Santiago Anibal Carrillo Torres -202259465
 - Edwar Yamir Forero Blanco - 202259664
 ```
