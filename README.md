@@ -14,4 +14,6 @@ Para ejecutar los programas debe dirigirse a la carpeta llamada "java", la cual 
 - Package Punto3 : En este package se encuentra las clases InsertionSort.java, MargeSort.java, QuickSort.java estas clases implmentan el codigo pedido en el ejercio 3 del taller
 
 En cada package encontrara como ejecutar cada punto.
-  
+***
+# Informe:
+Se encuentra en el repositorio git
