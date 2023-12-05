@@ -16,4 +16,4 @@ Para ejecutar los programas debe dirigirse a la carpeta llamada "java", la cual 
 En cada package encontrara como ejecutar cada punto.
 ***
 # Informe:
-Se encuentra en el repositorio git
+Se encuentra en el repositorio github en la ruta: (Taller3-ADA/Taller #3-Algoritmos.pdf)
